@@ -2,9 +2,6 @@ import requests_cache
 import xml.etree.ElementTree
 import simpletimer
 
-# Also, this is just counting dated records
-# Make a note of what percentage of all records these dated records are
-
 DATE_TAG = "{http://www.pbcore.org/PBCore/PBCoreNamespace.html}pbcoreAssetDate"
 # "all"/"digitized"/"online"
 ACCESS_TYPE = "online"
@@ -15,8 +12,6 @@ START = 0
 
 session = requests_cache.CachedSession()
 file = open("years-online.tsv", "w+")
-# timer = simpletimer.Timer()
-# timer.start()
 
 years = []
 for query_i in range(QUERIES):
@@ -36,16 +31,3 @@ for query_i in range(QUERIES):
         file.write(f"{query_i}\t{record_i}\t{year}\n")
 
 file.close()
-# timer.end()
-# print(timer.elapsed())
-
-# 1900-00-00s not real?
-
-# x out of z records dated, z-x out of z records undated
-# find a way to limit to digitized, and sort by date
-
-# would make sense for this to be quadratic growth
-# "# new records increases linearly on each time interval"
-# exponential would be "total count scaled by same value per time interval"
-
-# Next step- limit to digitized records
