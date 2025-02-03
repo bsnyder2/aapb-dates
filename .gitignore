@@ -6,3 +6,4 @@ data-2025-01/
 old/
 out/
 figures/old*
+__pycache__/
