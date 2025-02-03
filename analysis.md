@@ -1,5 +1,8 @@
 ## Analysis of date distribution of AAPB records
+Data taken from <https://americanarchive.org/catalog>
+
 As of 01/2025, only about 19% of the records listed have a date field, so this sample may not be representative of the whole collection
+
 ## Notes
 ### Record count
 - Overall steady increase from early 1970s to late 2000s
