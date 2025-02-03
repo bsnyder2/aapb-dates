@@ -1,3 +1,8 @@
 .history/
 .venv/
 *.sqlite
+data-2024-08/
+data-2025-01/
+old/
+out/
+figures/old*

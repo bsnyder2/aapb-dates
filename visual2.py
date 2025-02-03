@@ -7,9 +7,12 @@ BIN_WIDTH = 1
 START_YEAR = 1940
 
 filepaths = [
-    "./data/years-all.tsv",
-    "./data/years-digitized.tsv",
-    "./data/years-online.tsv",
+    "./data-2025-01/years-all2025.tsv",
+    "./data-2025-01/years-digitized2025.tsv",
+    "./data-2025-01/years-online2025.tsv",
+    # "./data-2024-08/years-all.tsv",
+    # "./data-2024-08/years-digitized.tsv",
+    # "./data-2024-08/years-online.tsv",
 ]
 hist_datas = [[], [], []]
 for hist_data_i, filepath in enumerate(filepaths):
@@ -20,8 +23,8 @@ for hist_data_i, filepath in enumerate(filepaths):
         hist_datas[hist_data_i].append(year)
 
 bins1 = np.arange(START_YEAR, 2021, BIN_WIDTH)
-bins2 = np.arange(2021, 2025, BIN_WIDTH)
-bins = np.concatenate((bins1, bins2)) if BIN_WIDTH <= 4 else np.append(bins1, 2024)
+bins2 = np.arange(2021, 2026, BIN_WIDTH)
+bins = np.concatenate((bins1, bins2)) if BIN_WIDTH <= 4 else np.append(bins1, 2026)
 
 fig, ax = plt.subplots()
 # each bin's height = # points inside of that range
@@ -41,10 +44,12 @@ ticks = np.arange(START_YEAR, 2030, 10)
 ax.set_xticks(ticks)
 for i, bars in enumerate([bars_all, bars_digitized, bars_online]):
     ax.bar(
-        (BIN_WIDTH / 2) + np.arange(START_YEAR, 2024, BIN_WIDTH),
+        (BIN_WIDTH / 2) + np.arange(START_YEAR, 2025, BIN_WIDTH),
         bars,
         width=BIN_WIDTH,
         label=labels[i],
     )
 ax.legend()
+fig.set_size_inches(9, 6)
+plt.title("AAPB Dated Record Availability by Year (01/2025)")
 plt.show()
