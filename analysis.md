@@ -1,5 +1,5 @@
 ## Analysis of date distribution of AAPB records
-Data taken from <https://americanarchive.org/catalog>
+Histograms showing distribution of AAPB record dates from 1940 to 2024. Data taken from <https://americanarchive.org/catalog>
 
 As of 01/2025, only about 19% of the records listed have a date field, so this sample may not be representative of the whole collection
 
